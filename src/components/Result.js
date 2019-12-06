@@ -1,7 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
 import expand from "emmet";
+import styled from "styled-components";
 import Highlight from "react-highlight";
 import { EmmetContext } from "./../hooks/useEmmet";
+
+const NoMargin = styled.div`
+  > pre {
+    margin: 0;
+  }
+`;
 
 const Result = () => {
   const { emmet } = useContext(EmmetContext);
@@ -22,11 +29,15 @@ const Result = () => {
     }
   }, [emmet, emmetOptions]);
 
-  if (invalid) {
-    return <div>The text you've added is invalid!</div>;
-  }
-
-  return <Highlight language="html">{result}</Highlight>;
+  return (
+    <NoMargin>
+      {invalid ? (
+        <div>The text you've added is invalid!</div>
+      ) : (
+        <Highlight language="html">{result}</Highlight>
+      )}
+    </NoMargin>
+  );
 };
 
 export default Result;

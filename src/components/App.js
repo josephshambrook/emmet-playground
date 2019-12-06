@@ -22,8 +22,6 @@ const Global = createGlobalStyle`
 `;
 
 const Grid = styled.main`
-  display: grid;
-  grid-gap: 1.5rem;
   /* grid-template-rows: min-content 1fr min-content 1fr; */
   min-height: 100vh;
   min-width: 0;
@@ -32,7 +30,38 @@ const Grid = styled.main`
     margin: 0;
   }
 
+  > * + * {
+    margin-top: 1.5rem;
+  }
+
+  > [data-area="header"] {
+    grid-area: header;
+  }
+
+  > [data-area="intro"] {
+    grid-area: intro;
+  }
+
+  > [data-area="input"] {
+    grid-area: input;
+  }
+
+  > [data-area="output"] {
+    grid-area: output;
+  }
+
+  > [data-area="more"] {
+    grid-area: more;
+  }
+
   @media screen and (min-width: 800px) {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-areas:
+      "header header"
+      "intro intro"
+      "input output"
+      "more more";
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(3, min-content);
   }
@@ -42,16 +71,14 @@ function App() {
   return (
     <Grid>
       <Global />
-      <h1>Emmet Playground</h1>
-      <Intro />
-      <Editor />
-      <h1>Result</h1>
-      <Result />
-      <h3>To do:</h3>
-      <ul>
-        <li>Add clickable example Emmet snippets</li>
-        <li>Add "What is Emmet?" link</li>
-      </ul>
+      <h1 data-area="header">Emmet Playground</h1>
+      <Intro data-area="intro" />
+      <Editor data-area="input" />
+      <Result data-area="output" />
+      <div>
+        <h2>Resources:</h2>
+        <a href="https://docs.emmet.io/cheat-sheet/">Emmet cheatsheet</a>
+      </div>
     </Grid>
   );
 }
