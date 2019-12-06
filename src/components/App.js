@@ -22,7 +22,6 @@ const Global = createGlobalStyle`
 `;
 
 const Grid = styled.main`
-  /* grid-template-rows: min-content 1fr min-content 1fr; */
   min-height: 100vh;
   min-width: 0;
 
@@ -36,10 +35,14 @@ const Grid = styled.main`
 
   > [data-area="header"] {
     grid-area: header;
+    max-width: 50rem;
+    justify-self: center;
   }
 
   > [data-area="intro"] {
     grid-area: intro;
+    max-width: 50rem;
+    justify-self: center;
   }
 
   > [data-area="input"] {
@@ -52,6 +55,9 @@ const Grid = styled.main`
 
   > [data-area="more"] {
     grid-area: more;
+    max-width: 50rem;
+    justify-self: center;
+    width: 100%;
   }
 
   @media screen and (min-width: 800px) {
@@ -75,7 +81,7 @@ function App() {
       <Intro data-area="intro" />
       <Editor data-area="input" />
       <Result data-area="output" />
-      <div>
+      <div data-area="more">
         <h2>Resources:</h2>
         <a href="https://docs.emmet.io/cheat-sheet/">Emmet cheatsheet</a>
       </div>
