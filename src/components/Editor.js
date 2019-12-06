@@ -26,7 +26,10 @@ const Editor = props => {
 
   const examples = [
     "ul>li*5{Item $$$}.item.item--$$$",
-    "div+div>p>span+em^^bq"
+    "div+div>p>span+em^^bq",
+    "a:link",
+    "html:5",
+    "div>(header>ul>li*2>a)+footer>p"
   ];
 
   return (
