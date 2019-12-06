@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import Example from "./Example";
 import { EmmetContext } from "./../hooks/useEmmet";
 
 const StyledTextarea = styled.textarea`
@@ -20,14 +21,28 @@ const StyledTextarea = styled.textarea`
   width: 100%;
 `;
 
-const Editor = () => {
+const Editor = props => {
   const { emmet, setEmmet } = useContext(EmmetContext);
 
+  const examples = [
+    "ul>li*5{Item $$$}.item.item--$$$",
+    "div+div>p>span+em^^bq"
+  ];
+
   return (
-    <StyledTextarea
-      onChange={({ target }) => setEmmet(target.value)}
-      value={emmet}
-    />
+    <div {...props}>
+      <h2>Input (editable!)</h2>
+      <StyledTextarea
+        onChange={({ target }) => setEmmet(target.value)}
+        value={emmet}
+      />
+      <h3>Examples:</h3>
+      <div>
+        {examples.map(ex => (
+          <Example onClick={() => setEmmet(ex)}>{ex}</Example>
+        ))}
+      </div>
+    </div>
   );
 };
 

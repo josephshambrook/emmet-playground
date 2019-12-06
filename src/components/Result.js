@@ -31,6 +31,7 @@ const Result = () => {
 
   return (
     <NoMargin>
+      <h2>Output</h2>
       {invalid ? (
         <div>The text you've added is invalid!</div>
       ) : (
