@@ -1,7 +1,7 @@
 {
   "name": "emmet-playground",
   "version": "1.0.0",
-  "description": "",
+  "description": "A way to try the really helpful tool Emmet online, with quick examples.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
