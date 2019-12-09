@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Intro from "./Intro";
 import Editor from "./Editor";
 import Result from "./Result";
+import Resources from "./Resources";
 
 import "normalize.css";
 
@@ -81,10 +82,7 @@ function App() {
       <Intro data-area="intro" />
       <Editor data-area="input" />
       <Result data-area="output" />
-      <div data-area="more">
-        <h2>Resources:</h2>
-        <a href="https://docs.emmet.io/cheat-sheet/">Emmet cheatsheet</a>
-      </div>
+      <Resources />
     </Grid>
   );
 }
