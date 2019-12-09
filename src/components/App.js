@@ -82,7 +82,7 @@ function App() {
       <Intro data-area="intro" />
       <Editor data-area="input" />
       <Result data-area="output" />
-      <Resources />
+      <Resources data-area="more" />
     </Grid>
   );
 }
