@@ -2,8 +2,7 @@
 
 A web app written with React, to try out the underused tool Emmet.
 
-[Try it out](https://emmet-playground.now.sh/)
-[See the code running on CodeSandbox](https://codesandbox.io/s/github/josephshambrook/emmet-playground)
+[Try it out](https://emmet-playground.now.sh/) or [See the code running on CodeSandbox](https://codesandbox.io/s/github/josephshambrook/emmet-playground)
 
 ## Installation
 
