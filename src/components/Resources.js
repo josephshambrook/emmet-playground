@@ -18,10 +18,14 @@ const links = [
   {
     href: "https://atom.io/packages/emmet",
     text: "How to enable Emmet in Atom"
+  },
+  {
+    href: "https://github.com/josephshambrook/emmet-playground",
+    text: "Code for this web app on GitHub"
   }
 ];
 
-const Resources = props => (
+const Resources = (props) => (
   <div {...props}>
     <h2>Resources</h2>
     {links.map(({ href, text }) => (
