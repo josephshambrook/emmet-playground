@@ -7,7 +7,7 @@ const StyledTextarea = styled.textarea`
   --text-size: 1.2rem;
   --text-height: 1.4rem;
 
-  background-color: #282c34;
+  background-color: #1e1e1e;
   border-radius: 5px;
   box-sizing: border-box;
   color: #fff;
